@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<html>
 
 <head>
-    <title>Map </title>
+    <title>Map</title>
     <link href="https://cdn.amplify.aws/packages/maplibre-gl/1.15.2/maplibre-gl.css" rel="stylesheet" integrity="sha384-DrPVD9GufrxGb7kWwRv0CywpXTmfvbKOZ5i5pN7urmIThew0zXKTME+gutUgtpeD" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdn.amplify.aws/packages/maplibre-gl/1.15.2/maplibre-gl.js" integrity="sha384-rwYfkmAOpciZS2bDuwZ/Xa/Gog6jXem8D/whm3wnsZSVFemDDlprcUXHnDDUcrNU" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.amplify.aws/packages/core/4.3.0/aws-amplify-core.min.js" integrity="sha384-7Oh+5w0l7XGyYvSqbKi2Q7SA5K640V5nyW2/LEbevDQEV1HMJqJLA1A00z2hu8fJ" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -22,9 +23,9 @@
 <body>
     <div id="map" />
     <script type="module">
-        const { Amplify } = aws_amplify_core; const { createMap } = AmplifyMapLibre; Amplify.configure({ Auth: { identityPoolId: "REPLACE_WITH_POOL_ID", region: "us-east-1", }, geo: { AmazonLocationService: { maps: { items: { "Map": { style: "Default style" },
-        }, default: "Map", }, region: "us-east-1", }, } }); async function initializeMap() { const map = await createMap( { container: "map", center: [-123.1187, 49.2819], zoom: 10, hash: true, } ); map.addControl(new maplibregl.NavigationControl(), "top-left");
-        } initializeMap();
+        const { Amplify } = aws_amplify_core; const { createMap } = AmplifyMapLibre; Amplify.configure({ Auth: { identityPoolId: "us-east-1:261b53aa-0fd2-4a16-bb9f-155c4d453db5", region: "us-east-1", }, geo: { AmazonLocationService: { maps: { items: { "Map":
+        { style: "Default style" }, }, default: "Map", }, region: "us-east-1", }, } }); async function initializeMap() { const map = await createMap( { container: "map", center: [-123.1187, 49.2819], zoom: 10, hash: true, } ); map.addControl(new maplibregl.NavigationControl(),
+        "top-left"); } initializeMap();
     </script>
 </body>
 

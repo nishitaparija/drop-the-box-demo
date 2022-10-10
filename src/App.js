@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Location from 'aws-sdk/clients/location';
+//import Location from 'aws-sdk/clients/location';
 import React, { useState, useEffect } from 'react';
 
 import Amplify, { Auth } from 'aws-amplify';
@@ -16,6 +16,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 
 
 import awsconfig from './aws-exports';
+import { Map } from 'mapbox-gl';
 
 const mapName = "Map"; // HERE IT GOES THE NAME OF YOUR MAP
 
@@ -96,35 +97,35 @@ const App = () => {
         }, []);
 
         return ( < AmplifyAuthenticator >
-            <
-            div className = "App" >
-            <
-            Header / >
-            <
-            div > {
-                credentials ? ( <
-                    ReactMapGL {...viewport }
-                    width = "100%"
-                    height = "100vh"
-                    transformRequest = { transformRequest(credentials) }
-                    mapStyle = { mapName }
-                    onViewportChange = { setViewport }
-                    w >
-                    <
-                    div style = {
-                        { position: "absolute", left: 20, top: 20 } } >
-                    <
-                    NavigationControl showCompass = { false }
-                    /> </div >
-
-                    <
-                    /ReactMapGL>) ( <h1> Loading</h
-                    1 > )
-
                 <
-                /div> <
-                /div>  <
-                /AmplifyAuthenticator>
-            )
-        }
-        export default App;
+                div className = "App" >
+                <
+                Header / >
+                <
+                div > {
+                    credentials ? ( <
+                        ReactMapGL {...viewport }
+                        width = "100%"
+                        height = "100vh"
+                        transformRequest = { transformRequest(credentials) }
+                        mapStyle = { mapName }
+                        onViewportChange = { setViewport } >
+                        <
+                        div style = {
+                            { position: "absolute", left: 20, top: 20 } } >
+                        <
+                        NavigationControl showCompass = { false }
+                        /> </div >
+
+                        <
+                        /ReactMapGL>) :Map}
+
+                        <
+                        /div>
+
+                        <
+                        /div>  <
+                        /AmplifyAuthenticator>
+                    )
+                }
+                export default App;
